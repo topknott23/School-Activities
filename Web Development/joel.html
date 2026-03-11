@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Loom | Joel Theo C. Gallarde</title>
+    <style>
+        /* --- GLOBAL STYLES --- */
+        :root {
+            --primary-color: #ffffff;
+            --accent-color: #ffd700; /* Street Graffiti Yellow */
+            --bg-color: #121212; /* Dark Urban Background */
+            --card-bg: #1e1e1e;
+            --text-gray: #b3b3b3;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* --- HEADER --- */
+        header {
+            background: rgba(0,0,0,0.9);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            font-style: italic;
+        }
+
+        .logo span { color: var(--accent-color); }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a:hover { color: var(--accent-color); transition: 0.3s; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/wallpaper.png'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 4px 4px 0px #000;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            background: #000;
+            padding: 5px 15px;
+            transform: skew(-10deg);
+        }
+
+        /* --- ABOUT --- */
+        .about {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 { border-bottom: 2px solid var(--accent-color); display: inline-block; }
+
+        /* --- PORTFOLIO GRID --- */
+        .portfolio {
+            padding: 50px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border: 1px solid var(--accent-color);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #333;
+            cursor: pointer;
+        }
+
+        .card-info {
+            padding: 20px;
+        }
+
+        .card-info h3 { font-size: 1.2rem; margin: 0; }
+        .card-info p { color: var(--text-gray); font-size: 0.9rem; margin-top: 5px; }
+
+        /* --- CONTACT --- */
+        footer {
+            background: #000;
+            padding: 40px;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .contact-info p { margin: 5px 0; }
+        
+        /* Modal for Full Image View */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.95);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 2px solid var(--accent-color);
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            header { flex-direction: column; gap: 10px; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">STREET<span>LOOM</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Joel Theo Gallarde</h1>
+        <p>"WEAR YOUR STORY"</p>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About The Brand</h2>
+        <p>
+            Street Loom isn't just clothes—it's a movement. Every stitch is ripped from the city: 
+            graffiti walls, concrete grind, and late-night noise. We build pieces for the bold.
+            This portfolio showcases the full brand identity development from concept to prototype.
+        </p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <h2 class="section-title">Design Collection</h2>
+        <div class="grid">
+
+            <!-- Item 1: Wallpaper -->
+            <div class="card">
+                <img src="images/wallpaper.png" alt="MS Paint Wallpaper" onclick="openModal(this)">
+                <div class="card-info">
+                    <h3>Digital Art / Wallpaper</h3>
+                    <p>MS Paint Activity - Character Illustration</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Moodboard -->
+            <div class="card">
+                <img src="images/moodboard.png" alt="Branding Moodboard" onclick="openModal(this)">
+                <div class="card-info">
+                    <h3>Brand Moodboard</h3>
+                    <p>Visual Identity & Aesthetic Direction</p>
+                </div>
+            </div>
+
+            <!-- Item 3: Logo Designs -->
+            <div class="card">
+                <img src="images/logos.png" alt="Logo Sketches" onclick="openModal(this)">
+                <div class="card-info">
+                    <h3>Logo Development</h3>
+                    <p>Hand-drawn Sketches & Final Vector Concepts</p>
+                </div>
+            </div>
+
+            <!-- Item 4: Brochures -->
+            <div class="card">
+                <img src="images/brochure.png" alt="Brochure Design" onclick="openModal(this)">
+                <div class="card-info">
+                    <h3>Marketing Brochure</h3>
+                    <p>Tri-fold Collection Showcase</p>
+                </div>
+            </div>
+
+            <!-- Item 5: Flyers -->
+            <div class="card">
+                <img src="images/flyer.png" alt="Flyer Design" onclick="openModal(this)">
+                <div class="card-info">
+                    <h3>Promotional Flyer</h3>
+                    <p>Street Loom Model Campaign</p>
+                </div>
+            </div>
+
+            <!-- Item 6: Business Card -->
+            <div class="card">
+                <img src="images/businesscard.png" alt="Business Card" onclick="openModal(this)">
+                <div class="card-info">
+                    <h3>Business Card</h3>
+                    <p>Founder / CEO Identity</p>
+                </div>
+            </div>
+
+            <!-- Item 7: Calendar -->
+            <div class="card">
+                <img src="images/calendar.png" alt="2026 Calendar" onclick="openModal(this)">
+                <div class="card-info">
+                    <h3>2026 Brand Calendar</h3>
+                    <p>Yearly Planner with Streetwear Visuals</p>
+                </div>
+            </div>
+
+            <!-- Item 8: Mobile App -->
+            <div class="card">
+                <img src="images/app.png" alt="App Prototype" onclick="openModal(this)">
+                <div class="card-info">
+                    <h3>Mobile App Prototype</h3>
+                    <p>UI/UX Design for E-commerce App</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-info">
+            <p><strong>Joel Theo C. Gallarde</strong> | Founder & CEO</p>
+            <p>Email: streetloom05@gmail.com</p>
+            <p>Phone: 639-93412-3624</p>
+            <p>Website: www.streetloom.com</p>
+            <br>
+            <p style="color: #666; font-size: 0.8rem;">© 2024 Street Loom. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImg">
+    </div>
+
+    <script>
+        function openModal(element) {
+            document.getElementById("myModal").style.display = "flex";
+            document.getElementById("modalImg").src = element.src;
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
