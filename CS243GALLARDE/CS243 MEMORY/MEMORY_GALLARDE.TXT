@@ -1,0 +1,27 @@
+1.) Types of Computer Memory Mentioned in the Videos:
+
+Main Memory (Dynamic Random Access Memory – DRAM):
+Temporarily stores the data and instructions currently being processed by the CPU.
+
+Hard Disk Drives (HDDs):
+A type of magnetic storage device that keeps data even when the power is off.
+
+Solid State Drives (SSDs):
+A storage device that uses flash memory instead of spinning disks to store information permanently.
+
+NAND Flash Memory (used in SSDs):
+A form of non-volatile memory found inside SSDs, made up of memory cells that store data using electrical charge.
+
+2.) How Each Type of Memory Stores Data and the Materials Used:
+
+Main Memory (DRAM):
+DRAM keeps data in memory cells composed of one capacitor and one transistor (1T1C structure). A charged capacitor stands for a “1,” while a discharged one means “0.” The main materials used are silicon for transistors and dielectric materials for capacitors to hold the charge.
+
+Hard Disk Drives (HDDs):
+HDDs save information on spinning disks (platters) coated with magnetic material. Data is stored by changing the magnetic direction (north or south) of tiny areas on the disk surface. The main components are aluminum or glass platters, magnetic coatings, read/write heads, and actuator arms that move the heads into position.
+
+Solid State Drives (SSDs):
+SSDs store data using NAND flash memory, made of grids of cells that trap electrical charges to represent bits of data. Each cell can store more than one bit. These drives are built from silicon-based layers, floating gates or charge-trap transistors, and insulators, often arranged in stacked 3D NAND structures for greater capacity.
+
+NAND Flash Memory (inside SSDs):
+This memory uses transistors with floating gates or charge-trap layers to capture and hold electrons. The amount of trapped charge changes how the transistor operates, which represents specific data values. It is made from layers of silicon, insulating oxide materials, and stacked structures that allow for high data density.
