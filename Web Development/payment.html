@@ -1,0 +1,44 @@
+<!-- payment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="payment-container">
+        <h1>Make Your Payment</h1>
+        <form id="paymentForm">
+            <!-- Name Field -->
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required placeholder="Your Name">
+
+            <!-- Email Field -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" required placeholder="Your Email">
+
+            <!-- Service Type Selection -->
+            <label for="serviceChoice">Choose a Service:</label>
+            <select id="serviceChoice" required>
+                <option value="">--Select a Service--</option>
+                <option value="service1">Marketing Reports</option>
+                <option value="service2">Business Frameworks</option>
+                <option value="service3">Workshop and Webinars</option>
+                <option value="service4">Consultation Packages</option>
+                
+            </select>
+
+            <!-- Additional Information -->
+            <label for="additionalInfo">Additional Information:</label>
+            <textarea id="additionalInfo" placeholder="Any additional information..."></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit" class="button-wrap">Submit Payment</button>
+        </form>
+    </div>
+
+    <script src="scripts/payment.js"></script>
+</body>
+</html>
