@@ -3,7 +3,8 @@ class List {
     virtual void add(int) = 0;
     virtual int get(int pos) = 0;
     virtual void print() = 0;
-    virtual void addAt(int num, int pos) = 0;
-    // TODO add virtual method addAt here
+    virtual void plus(int num) = 0;
+    virtual int summation() = 0;
+    // TODO add virtual method plus & summation here
 
 };
